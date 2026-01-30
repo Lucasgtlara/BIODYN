@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIODYNAMIX</title>
+    <link rel="icon" type="image/png" href="imagen4.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET GERAL --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #0e4b41; /* Verde Escuro */
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh;
+        }
+
+        /* --- 1. FAIXA CINZA (TOPO) --- */
+        .top-bar-print {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #f1f1f1;
+            object-fit: cover;
+        }
+
+        /* --- 2. O CARTÃO BRANCO --- */
+        .main-wrapper {
+            background-color: #fff;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 15px; 
+            margin-bottom: 20px;
+            border-radius: 25px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        /* --- IMAGENS --- */
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .header-print { width: 100%; border-bottom: 1px solid #eee; }
+        .content-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        .hero-section {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-left, .hero-right { flex: 1; }
+
+        .logos-section {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-section { flex-direction: column; }
+            .main-wrapper { border-radius: 0; margin-top: 0; }
+        }
+
+        /* --- POPUP DE COOKIES --- */
+        .cookie-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(3px);
+        }
+
+        .cookie-box {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            text-align: left;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .cookie-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .cookie-header h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1b25;
+            margin: 0;
+        }
+
+        .close-btn {
+            font-size: 28px;
+            color: #1a1b25;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .cookie-box p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #4b4c55;
+            margin-bottom: 25px;
+        }
+
+        /* BOTÕES (LINKS) */
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-link {
+            flex: 1;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.2s;
+        }
+
+        .btn-link:hover { opacity: 0.9; }
+
+        /* Cores dos Botões */
+        .style-pref { background-color: #f2f2f4; color: #1a1b25; }
+        .style-accept { background-color: #1a1b25; color: white; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <img src="imagen3.jpg" alt="Clickbank Seguro" class="top-bar-print">
+
+    <div class="main-wrapper">
+        <img src="imagen2.jpg" alt="Cabeçalho Biodynamix" class="header-print">
+
+        <div class="content-container">
+            <div class="hero-section">
+                <div class="hero-left">
+                    <img src="imagen1.jpg" alt="Medico">
+                </div>
+                <div class="hero-right">
+                    <img src="imagen.jpg" alt="Video">
+                </div>
+            </div>
+
+            <div class="logos-section">
+                <img src="logos.jpg" alt="Logos" style="margin: 0 auto;">
+            </div>
+        </div>
+    </div>
+
+    <div id="cookieModal" class="cookie-overlay">
+        <div class="cookie-box">
+            <div class="cookie-header">
+                <h2>Cookies Settings</h2>
+                <span class="close-btn" onclick="fecharPopup()">&times;</span>
+            </div>
+            
+            <p>
+                We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking accept, you agree to this, as outlined in our Cookie Policy.
+            </p>
+            
+            <div class="cookie-buttons">
+                <a href="https://fa39ec93kozvx1ze3cqkk-upec.hop.clickbank.net" class="btn-link style-pref">Preferences</a>
+                
+                <a href="https://fa39ec93kozvx1ze3cqkk-upec.hop.clickbank.net" class="btn-link style-accept">Accept</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fecharPopup() {
+            document.getElementById('cookieModal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
