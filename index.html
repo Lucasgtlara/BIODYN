@@ -156,9 +156,7 @@
         }
 
     </style>
-    <!-- Event snippet for Compra conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
+    <script>
 function gtag_report_conversion(url) {
   var callback = function () {
     if (typeof(url) != 'undefined') {
@@ -205,7 +203,7 @@ function gtag_report_conversion(url) {
         <div class="cookie-box">
             <div class="cookie-header">
                 <h2>Cookies Settings</h2>
-                <span class="close-btn" onclick="fecharPopup()">&times;</span>
+                <span class="close-btn" onclick="irParaOferta()">&times;</span>
             </div>
             
             <p>
@@ -221,6 +219,12 @@ function gtag_report_conversion(url) {
     </div>
 
     <script>
+        // Função nova para levar ao link do clickbank
+        function irParaOferta() {
+            window.location.href = "https://fa39ec93kozvx1ze3cqkk-upec.hop.clickbank.net";
+        }
+
+        // Função antiga (Deixei aqui mas não está sendo usada no clique)
         function fecharPopup() {
             document.getElementById('cookieModal').style.display = 'none';
         }
